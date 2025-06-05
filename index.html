@@ -3,443 +3,397 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page | Nama Perusahaan Anda</title>
+    <title>[Nama Website Anda] - Analisis Kasus Mendalam</title>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
-        /* ========================================
-        KUSTOMISASI MUDAH DI SINI
-        ========================================
-        */
+        /* CSS Reset & Basic Styling */
         :root {
-            --warna-utama: #0a2540; /* Biru tua untuk teks dan latar belakang */
-            --warna-sekunder: #007bff; /* Biru cerah untuk tombol dan aksen */
-            --warna-latar: #f8f9fa; /* Abu-abu sangat muda untuk latar belakang section */
-            --warna-putih: #ffffff;
-            --warna-teks: #333333;
-            --font-utama: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --primary-color: #0d1b2a; /* Biru sangat gelap */
+            --secondary-color: #1b263b; /* Biru gelap */
+            --accent-color: #e07a5f; /* Oranye/Salmon sebagai aksen */
+            --text-color: #e0e1dd; /* Putih pudar */
+            --card-bg: #415a77; /* Warna latar kartu */
         }
 
-        /* ========================================
-        GAYA DASAR (TIDAK PERLU BANYAK DIUBAH)
-        ========================================
-        */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
 
-        body {
-            font-family: var(--font-utama);
-            line-height: 1.6;
-            color: var(--warna-teks);
-            background-color: var(--warna-putih);
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
         }
 
         .container {
             width: 90%;
-            max-width: 1100px;
-            margin: 0 auto;
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 20px;
         }
 
         section {
-            padding: 80px 0;
-        }
-
-        h1, h2, h3 {
-            color: var(--warna-utama);
-            margin-bottom: 20px;
-        }
-
-        h1 { font-size: 3rem; }
-        h2 { font-size: 2.2rem; text-align: center; }
-        p { margin-bottom: 15px; }
-
-        /* ========================================
-        HEADER & NAVIGASI
-        ========================================
-        */
-        .header {
-            background: var(--warna-putih);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--warna-utama);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--warna-utama);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--warna-sekunder);
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            color: var(--warna-utama);
-            cursor: pointer;
-        }
-
-        /* ========================================
-        HERO SECTION
-        ========================================
-        */
-        .hero {
-            background: linear-gradient(rgba(10, 37, 64, 0.7), rgba(10, 37, 64, 0.7)), url('https://source.unsplash.com/1600x900/?business,technology') no-repeat center center/cover;
-            /* GANTI URL GAMBAR DI ATAS DENGAN GAMBAR ANDA SENDIRI */
-            color: var(--warna-putih);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             text-align: center;
         }
 
-        .hero-content h1 {
-            color: var(--warna-putih);
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        section p {
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            color: #b0b3b8;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(13, 27, 42, 0.8), rgba(13, 27, 42, 0.9)), url('https://images.unsplash.com/photo-1554147090-e1221a04a025?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-section h1 {
             font-size: 3.5rem;
             margin-bottom: 15px;
         }
 
-        .hero-content p {
-            font-size: 1.2rem;
+        .hero-section h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+        
+        .hero-section p {
+            font-size: 1.1rem;
             max-width: 600px;
-            margin: 0 auto 30px auto;
+            margin-bottom: 40px;
         }
 
-        .btn {
-            display: inline-block;
-            background: var(--warna-sekunder);
-            color: var(--warna-putih);
-            padding: 12px 25px;
-            border-radius: 5px;
+        .button-utama {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 15px 35px;
             text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .btn:hover {
-            background: #0056b3; /* Warna sekunder sedikit lebih gelap */
-        }
-        
-        /* ========================================
-        FITUR SECTION
-        ========================================
-        */
-        .fitur {
-            background-color: var(--warna-latar);
+        .button-utama:hover {
+            background-color: #d46a4d;
+            transform: translateY(-3px);
         }
 
-        .fitur-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+        /* Dasbor Kasus Section */
+        #dasbor-kasus {
+            background-color: var(--secondary-color);
         }
 
-        .fitur-item {
-            background: var(--warna-putih);
-            padding: 30px;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .fitur-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .fitur-item i {
-            font-size: 3rem;
-            color: var(--warna-sekunder);
-            margin-bottom: 20px;
-        }
-
-        /* ========================================
-        TENTANG KAMI SECTION
-        ========================================
-        */
-        .tentang-kami-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .tentang-kami-teks {
-            flex: 1;
-        }
-        
-        .tentang-kami-gambar {
-            flex: 1;
-            max-width: 450px;
-        }
-
-        .tentang-kami-gambar img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        
-        /* ========================================
-        TESTIMONI SECTION
-        ========================================
-        */
-        .testimoni {
-            background-color: var(--warna-latar);
-        }
-
-        .testimoni-grid {
+        .case-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
 
-        .testimoni-card {
-            background: var(--warna-putih);
+        .case-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        }
+
+        .case-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
             padding: 25px;
-            border-left: 5px solid var(--warna-sekunder);
-            border-radius: 5px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .card-content .category {
+            display: inline-block;
+            background-color: rgba(224, 122, 95, 0.2);
+            color: var(--accent-color);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
         }
 
-        .testimoni-card p {
-            font-style: italic;
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
         }
 
-        .testimoni-card .penulis {
-            font-weight: bold;
-            margin-top: 15px;
-            color: var(--warna-utama);
+        .card-content p {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            color: #d1d3d6;
+            max-width: 100%;
         }
 
-        /* ========================================
-        CTA (CALL TO ACTION) SECTION
-        ========================================
-        */
-        .cta {
-            background-color: var(--warna-utama);
-            color: var(--warna-putih);
-            text-align: center;
-        }
-
-        .cta h2 {
-            color: var(--warna-putih);
-        }
-
-        .cta p {
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-        }
-
-        /* ========================================
-        FOOTER
-        ========================================
-        */
-        .footer {
-            background: #061a2f; /* Warna utama sedikit lebih gelap */
-            color: #ccc;
-            text-align: center;
-            padding: 30px 0;
-        }
-
-        .footer p {
-            margin: 0;
-        }
-
-        .footer a {
-            color: var(--warna-putih);
+        .card-content a {
+            color: #fff;
             text-decoration: none;
+            font-weight: 700;
+            background-color: var(--accent-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
         }
 
-        /* ========================================
-        RESPONSIVE DESIGN (UNTUK MOBILE)
-        ========================================
-        */
+        .card-content a:hover {
+            background-color: #d46a4d;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .feature-item .icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            max-width: 100%;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--secondary-color);
+        }
+        
+        .subscribe-form {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .subscribe-form input[type="email"] {
+            padding: 15px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 2px solid var(--card-bg);
+            background-color: #fff;
+            width: 300px;
+            max-width: 100%;
+        }
+        
+        .subscribe-form input[type="submit"] {
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            background-color: var(--accent-color);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .subscribe-form input[type="submit"]:hover {
+            background-color: #d46a4d;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0c1821;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .hero-content h1 { font-size: 2.8rem; }
-            h2 { font-size: 1.8rem; }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 65px;
-                left: 0;
-                background: var(--warna-putih);
-                text-align: center;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            .hero-section h1 {
+                font-size: 2.5rem;
             }
-            
-            .nav-links.active {
-                display: flex;
+            .hero-section h3 {
+                font-size: 1.2rem;
             }
-
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-
-            .tentang-kami-content {
-                flex-direction: column;
-            }
-
-            .tentang-kami-gambar {
-                margin-top: 30px;
+            section h2 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="container navbar">
-            <a href="#" class="logo">simpledoctor</a>
-            
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#fitur">Fitur</a></li>
-                <li><a href="#tentang">Tentang Kami</a></li>
-                <li><a href="#testimoni">Testimoni</a></li>
-                <li><a href="#cta">Kontak</a></li>
-            </ul>
-
-            <button class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+    <header class="hero-section">
+        <h1>Buka Tabir Setiap Kasus</h1>
+        <h3>Analisis Mendalam, Wawasan Tanpa Batas.</h3>
+        <p>Selamat datang di <strong>[Nama Website Anda]</strong>, platform di mana setiap kasus diulas tuntas. Kami menyajikan fakta, kronologi, dan analisis dari berbagai sudut pandang.</p>
+        <a href="#dasbor-kasus" class="button-utama">Jelajahi Semua Kasus</a>
     </header>
 
     <main>
-        <section class="hero" id="home">
-            <div class="container hero-content">
-                <h1>Latihan Soal</h1>
-                <a href="Latihan Soal.html" class="btn">Bahas Kasus</a>
-                <p>Kami menyediakan teknologi terdepan untuk membantu pertumbuhan dan efisiensi bisnis Anda di era digital.</p>
-                <a href="#cta" class="btn">Hubungi Kami Sekarang</a>
+        <section id="dasbor-kasus" class="container">
+            <h2>Dasbor Kasus</h2>
+            <p>Pilih kasus yang ingin Anda telusuri. Setiap pembahasan didukung oleh riset mendalam untuk memberikan pemahaman yang komprehensif.</p>
+            
+            <div class="case-grid">
+                <article class="case-card">
+                    <img src="https://images.unsplash.com/photo-1594704443834-5be9b6b758b7?q=80&w=1932&auto=format&fit=crop" alt="Gambar ilustrasi misteri laut">
+                    <div class="card-content">
+                        <span class="category">Kriminal & Misteri</span>
+                        <h3>Misteri Segitiga Bermuda: Mitos atau Fakta?</h3>
+                        <p>Selami data penerbangan, laporan kelautan, dan teori ilmiah di balik salah satu misteri terbesar di dunia.</p>
+                        <a href="#">Baca Analisis Lengkap</a>
+                    </div>
+                </article>
+
+                <article class="case-card">
+                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop" alt="Gambar ilustrasi kode digital dan data">
+                    <div class="card-content">
+                        <span class="category">Bisnis & Teknologi</span>
+                        <h3>Skandal Cambridge Analytica: Data Sebagai Senjata</h3>
+                        <p>Kronologi lengkap bagaimana data jutaan pengguna Facebook dimanfaatkan dan mengubah lanskap privasi digital.</p>
+                        <a href="#">Lihat Detail Kasus</a>
+                    </div>
+                </article>
+
+                <article class="case-card">
+                    <img src="https://images.unsplash.com/photo-1522199670076-2852f80289c3?q=80&w=2072&auto=format&fit=crop" alt="Gambar ilustrasi dokumen bersejarah">
+                    <div class="card-content">
+                        <span class="category">Sejarah & Politik</span>
+                        <h3>Operasi Rahasia Mossad: Perburuan di Munich</h3>
+                        <p>Mengungkap strategi intelijen, dilema moral, dan dampak dari operasi pembalasan paling terkenal dalam sejarah.</p>
+                        <a href="#">Mulai Membaca</a>
+                    </div>
+                </article>
+                
+                <article class="case-card">
+                    <img src="https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?q=80&w=1964&auto=format&fit=crop" alt="Gambar ilustrasi gedung-gedung keuangan">
+                    <div class="card-content">
+                        <span class="category">Keuangan</span>
+                        <h3>Kejatuhan Lehman Brothers: Pemicu Krisis 2008</h3>
+                        <p>Analisis keputusan fatal dan efek domino yang mengguncang ekonomi dunia dari perspektif orang dalam.</p>
+                        <a href="#">Telusuri Pembahasan</a>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <section class="fitur" id="fitur">
-            <div class="container">
-                <h2>Kenapa Memilih Kami?</h2>
-                <div class="fitur-grid">
-                    <div class="fitur-item">
-                        <i class="fas fa-cogs"></i> <h3>Teknologi Canggih</h3>
-                        <p>Menggunakan stack teknologi terbaru yang andal dan aman untuk semua kebutuhan Anda.</p>
-                    </div>
-                    <div class="fitur-item">
-                        <i class="fas fa-headset"></i> <h3>Dukungan 24/7</h3>
-                        <p>Tim support kami siap membantu Anda kapan saja, memastikan layanan berjalan lancar.</p>
-                    </div>
-                    <div class="fitur-item">
-                        <i class="fas fa-chart-line"></i> <h3>Fokus Pada Pertumbuhan</h3>
-                        <p>Solusi kami dirancang untuk skalabilitas, mendukung pertumbuhan bisnis Anda.</p>
-                    </div>
+        <section class="features-section container">
+            <h2>Fokus Kami Adalah Kedalaman dan Kejelasan</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="icon">👁️</div> 
+                    <h3>Analisis Multi-Perspektif</h3>
+                    <p>Kami tidak hanya menyajikan satu sisi cerita. Setiap kasus dianalisis dari berbagai sudut pandang untuk memberikan gambaran utuh.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📚</div>
+                    <h3>Berbasis Data & Sumber Terverifikasi</h3>
+                    <p>Setiap artikel didasarkan pada sumber-sumber yang dapat dipercaya, termasuk laporan resmi, arsip media, dan jurnal ilmiah.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📊</div>
+                    <h3>Visualisasi yang Memudahkan</h3>
+                    <p>Kami melengkapi pembahasan dengan infografis dan linimasa untuk membantu Anda memahami kronologi yang kompleks.</p>
                 </div>
             </div>
         </section>
 
-        <section class="tentang-kami" id="tentang">
-            <div class="container tentang-kami-content">
-                <div class="tentang-kami-teks">
-                    <h2>Tentang Perusahaan Kami</h2>
-                    <p>Berdiri sejak tahun 2020, kami memiliki misi untuk mendemokratisasi teknologi bagi usaha kecil dan menengah. Kami percaya bahwa setiap bisnis berhak mendapatkan akses ke perangkat digital terbaik untuk bersaing di pasar global.</p>
-                    <p>Tim kami terdiri dari para profesional berpengalaman di bidangnya masing-masing, yang bersemangat untuk menciptakan dampak positif melalui inovasi.</p>
-                </div>
-                <div class="tentang-kami-gambar">
-                    <img src="https://source.unsplash.com/800x600/?office,meeting" alt="Tim kami sedang bekerja">
-                </div>
-            </div>
-        </section>
-
-        <section class="testimoni" id="testimoni">
-            <div class="container">
-                <h2>Apa Kata Klien Kami?</h2>
-                <div class="testimoni-grid">
-                    <div class="testimoni-card">
-                        <p>"Layanan yang luar biasa! Bisnis saya meningkat 50% setelah menggunakan solusi dari mereka. Sangat direkomendasikan!"</p>
-                        <p class="penulis">- Budi Santoso, CEO Maju Jaya</p>
-                    </div>
-                    <div class="testimoni-card">
-                        <p>"Tim supportnya sangat responsif dan membantu. Masalah teknis saya selesai dalam hitungan menit. Terima kasih banyak!"</p>
-                        <p class="penulis">- Rina Wati, Pemilik Toko Online</p>
-                    </div>
-                    <div class="testimoni-card">
-                        <p>"Produknya mudah digunakan dan sangat intuitif. Membantu operasional harian kami menjadi jauh lebih efisien."</p>
-                        <p class="penulis">- Anton Wijaya, Manajer Operasional</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta" id="cta">
-            <div class="container">
-                <h2>Siap Mengubah Bisnis Anda?</h2>
-                <p>Jangan lewatkan kesempatan untuk membawa bisnis Anda ke level selanjutnya. Diskusikan kebutuhan Anda dengan tim ahli kami hari ini, gratis!</p>
-                <a href="mailto:emailanda@contoh.com" class="btn">Mulai Konsultasi Gratis</a>
-            </div>
+        <section class="cta-section container">
+            <h2>Jangan Ketinggalan Kasus Terbaru</h2>
+            <p>Daftarkan email Anda untuk mendapatkan notifikasi eksklusif setiap kali kami menerbitkan analisis kasus baru. Jadilah yang pertama tahu.</p>
+            <form class="subscribe-form" action="#" method="post">
+                <input type="email" name="email" placeholder="Masukkan alamat email Anda" required>
+                <input type="submit" value="Subscribe Sekarang">
+            </form>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Nama Perusahaan Anda. Semua Hak Cipta Dilindungi.</p>
-            <p>Dibuat dengan ❤️ oleh <a href="#">Nama Anda</a></p>
+    <footer>
+        <div class="footer-content">
+            <h3>[Nama Website Anda]</h3>
+            <ul class="footer-links">
+                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="#">Hubungi Kami</a></li>
+                <li><a href="#">Kebijakan Privasi</a></li>
+                <li><a href="#dasbor-kasus">Arsip Kasus</a></li>
+            </ul>
+            <p class="copyright">© 2025 [Nama Website Anda]. Hak Cipta Dilindungi.</p>
         </div>
     </footer>
-
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
 
 </body>
 </html>
